@@ -5,7 +5,9 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +33,8 @@ import javax.swing.DefaultComboBoxModel;
 
 public class FrmReporteCampeonato extends JFrame implements ActionListener {
 
+	private static Logger log = Logger.getLogger(FrmReporteCampeonato.class.getName());
+	
 	/**
 	 * 
 	 */
@@ -149,7 +153,15 @@ public class FrmReporteCampeonato extends JFrame implements ActionListener {
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(lstCampeonato);
 		String jasper = "reporteCampeonato.jasper";	
 		
-		JasperPrint print = GeneradorReporte.genera(jasper, dataSource, null);
+		//Obtengo la ruta relativa de la imagen
+		String rutaImagen = FrmReporteCampeonato.class.getResource("/logos/logo_reporte.jpg").getPath();
+		log.info(rutaImagen);
+		
+		//Envio la ruta relativa como parámetro
+		HashMap<String, Object> parametros = new HashMap<String, Object>();
+		parametros.put("imagen",rutaImagen);
+		
+		JasperPrint print = GeneradorReporte.genera(jasper, dataSource, parametros);
 		
 		JRViewer jRViewer = new JRViewer(print);
 		

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteCampeonato" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24578721-2db0-4e6f-8f99-2f268bfeeb62">
+	<parameter name="imagen" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -16,19 +17,23 @@
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="4a10513d-4a34-42d6-9c32-9d946df0bac7"/>
 				<staticText>
-					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="5c651275-bca2-4246-aa2f-867eac7ba6b9"/>
+					<reportElement x="250" y="10" width="240" height="43" forecolor="#FFFFFF" uuid="5c651275-bca2-4246-aa2f-867eac7ba6b9"/>
 					<textElement>
 						<font size="34" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Campeonatos]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="6d6ed297-f827-4a68-b5b6-68f6a77e7cf4"/>
+					<reportElement x="390" y="60" width="180" height="20" forecolor="#FFFFFF" uuid="6d6ed297-f827-4a68-b5b6-68f6a77e7cf4"/>
 					<textElement textAlignment="Right">
 						<font size="14" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Jorge Jacinto Gutarra]]></text>
 				</staticText>
+				<image>
+					<reportElement x="10" y="10" width="220" height="70" uuid="02bc4f12-8bec-477b-afea-cce2c0a3cb76"/>
+					<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+				</image>
 			</frame>
 		</band>
 	</title>
